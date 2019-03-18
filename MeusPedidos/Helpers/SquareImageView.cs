@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Widget;
 
-namespace NavDrawer.Helpers
+namespace MeusPedidos.Helpers
 {
     public class SquareImageView : ImageView
     {

@@ -1,26 +1,106 @@
 ﻿using Android.App;
-using Android.Widget;
+using Android.Content.PM;
+using Android.Content.Res;
 using Android.OS;
+using Android.Support.V4.Widget;
+using Android.Views;
+using Android.Widget;
+using Android.Support.V7.App;
+using MeusPedidos.Helpers;
+using MeusPedidos.Fragments;
 
-namespace MeusPedidos
+namespace MeusPedidos.Activities
 {
     [Activity(Label = "Meus Pedidos", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : Activity
+    public class MainActivity : BaseActivity
     {
-        int count = 1;
+        private MyActionBarDrawerToggle drawerToggle;
+        private string drawerTitle;
+        private string title;
+        private DrawerLayout drawerLayout;
+        private ListView drawerListView;
+
+        private static readonly string[] Sections = new[] {
+            "Browser", "Profile", "Sobre o App"
+        };
+
+        protected override int LayoutResource
+        {
+            get
+            {
+                return Resource.Layout.Main;
+            }
+        }
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            this.title = this.drawerTitle = this.Title;
+            this.drawerLayout = this.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            this.drawerListView = this.FindViewById<ListView>(Resource.Id.left_drawer);
 
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            //Create Adapter for drawer List
+            this.drawerListView.Adapter = new ArrayAdapter<string>(this, Resource.Layout.item_menu, Sections);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
+            //Set click handler when item is selected
+            this.drawerListView.ItemClick += (sender, args) => ListItemClicked(args.Position);
 
-            button.Click += delegate { button.Text = $"{count++} clicks!"; };
+            //Set Drawer Shadow
+            this.drawerLayout.SetDrawerShadow(Resource.Mipmap.drawer_shadow_dark, (int)GravityFlags.Start);
+
+
+
+            //DrawerToggle is the animation that happens with the indicator next to the actionbar
+            this.drawerToggle = new MyActionBarDrawerToggle(this, this.drawerLayout,
+                this.Toolbar,
+                Resource.String.drawer_open,
+                Resource.String.drawer_close);
+
+            //Display the current fragments title and update the options menu
+            this.drawerToggle.DrawerClosed += (o, args) => {
+                this.SupportActionBar.Title = this.title;
+                this.InvalidateOptionsMenu();
+            };
+
+            //Display the drawer title and update the options menu
+            this.drawerToggle.DrawerOpened += (o, args) => {
+                this.SupportActionBar.Title = this.drawerTitle;
+                this.InvalidateOptionsMenu();
+            };
+
+            //Set the drawer lister to be the toggle.
+            this.drawerLayout.SetDrawerListener(this.drawerToggle);
+            //if first time you will want to go ahead and click first item.
+            if (savedInstanceState == null)
+            {
+                ListItemClicked(0);
+            }
+        }
+
+        private void ListItemClicked(int position)
+        {
+            Android.Support.V4.App.Fragment fragment = null;
+            switch (position)
+            {
+                case 0:
+                   fragment = new BrowseFragment();//browse
+                    break;
+                case 1:
+                    fragment = new ProfileFragment();//friends
+                    break;
+                case 2:
+                    fragment = new AboutAppFragment();//profile
+                    break;
+            }
+
+            SupportFragmentManager.BeginTransaction()
+                .Replace(Resource.Id.content_frame, fragment)
+                .Commit();
+
+            this.drawerListView.SetItemChecked(position, true);
+            SupportActionBar.Title = this.title = Sections[position];
+            this.drawerLayout.CloseDrawers();
         }
     }
 }

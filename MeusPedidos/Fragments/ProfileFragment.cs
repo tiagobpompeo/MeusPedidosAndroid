@@ -9,11 +9,11 @@ using Fragment = Android.Support.V4.App.Fragment;
 
 namespace MeusPedidos.Fragments
 {
-    public class CartFragment : Fragment
+    public class ProfileFragment : Fragment
     {
         private ImageLoader m_ImageLoader;
 
-        public CartFragment()
+        public ProfileFragment()
         {
             this.RetainInstance = true;
         }

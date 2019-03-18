@@ -10,10 +10,10 @@ using MeusPedidos.Models;
 
 namespace MeusPedidos.Fragments
 {
-    public class HomeFragment : Fragment
+    public class BrowseFragment : Fragment
     {
 
-        public HomeFragment()
+        public BrowseFragment()
         {
             this.RetainInstance = true;
         }
