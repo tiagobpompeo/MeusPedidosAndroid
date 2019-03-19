@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using MeusPedidos.Contracts;
+using MeusPedidos.Contracts.Data;
 using MeusPedidos.Models;
+using MeusPedidos.Services.BaseCacheService;
+using MeusPedidos.Services.ConnectionService;
+using Pedidos.Services.Data;
 
 namespace MeusPedidos.Adapters
 {

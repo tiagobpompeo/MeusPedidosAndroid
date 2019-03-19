@@ -13,8 +13,8 @@ using Android.Widget;
 
 namespace MeusPedidos.Activities
 {
-    [Activity(Label = "Friend Activity")]
-    public class FriendActivity : Activity
+    [Activity(Label = "Home Activity")]
+    public class HomeActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

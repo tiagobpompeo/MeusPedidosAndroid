@@ -11,7 +11,7 @@ using MeusPedidos.Fragments;
 
 namespace MeusPedidos.Activities
 {
-    [Activity(Label = "Meus Pedidos", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Meus Pedidos", MainLauncher = true, Icon = "@mipmap/iconlauncher")]
     public class MainActivity : BaseActivity
     {
         private MyActionBarDrawerToggle drawerToggle;
@@ -21,7 +21,7 @@ namespace MeusPedidos.Activities
         private ListView drawerListView;
 
         private static readonly string[] Sections = new[] {
-            "Browser", "Profile", "Sobre o App"
+            "Browser", "Profile", "Sobre o App","Home", "Carrinho","Sobre o App"
         };
 
         protected override int LayoutResource
@@ -36,6 +36,7 @@ namespace MeusPedidos.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Akavache.Registrations.Start("Pedidos");
             this.title = this.drawerTitle = this.Title;
             this.drawerLayout = this.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.drawerListView = this.FindViewById<ListView>(Resource.Id.left_drawer);
@@ -91,6 +92,15 @@ namespace MeusPedidos.Activities
                     break;
                 case 2:
                     fragment = new AboutAppFragment();//profile
+                    break;
+                case 3:
+                    fragment = new HomeFragment();//home
+                    break;
+                case 4:
+                    //fragment = new CartFragment();//carrinho
+                    break;
+                case 5:
+                    //fragment = new AboutApp();//sobre carrinho
                     break;
             }
 
