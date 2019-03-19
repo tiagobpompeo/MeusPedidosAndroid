@@ -126,6 +126,11 @@ namespace MeusPedidos.Fragments
         }
 
 
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        {
+            inflater.Inflate(Resource.Menu.refresh, menu);
+        }
+
         protected void OnListItemClick(object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
         {
             var listView = sender as ListView;

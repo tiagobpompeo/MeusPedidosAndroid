@@ -225,6 +225,7 @@
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Adapters\CatalogoScreenAdapter.cs" />
     <Compile Include="Activities\HomeActivity.cs" />
+    <Compile Include="Activities\SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -273,6 +274,14 @@
     <AndroidResource Include="Resources\layout\home_fragment.axml" />
     <AndroidResource Include="Resources\layout\CustomView.axml" />
     <AndroidResource Include="Resources\drawable\nophotoproduto.png" />
+    <AndroidResource Include="Resources\layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\drawable\roxo.jpg" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_drawer_dark.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_drawer_light.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_drawer_dark.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_drawer_light.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_drawer_dark.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_drawer_light.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

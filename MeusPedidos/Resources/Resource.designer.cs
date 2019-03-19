@@ -1135,44 +1135,44 @@ namespace MeusPedidos
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f070065
-			public const int abc_background_cache_hint_selector_material_dark = 2131165285;
+			// aapt resource value: 0x7f07006e
+			public const int abc_background_cache_hint_selector_material_dark = 2131165294;
 			
-			// aapt resource value: 0x7f070066
-			public const int abc_background_cache_hint_selector_material_light = 2131165286;
+			// aapt resource value: 0x7f07006f
+			public const int abc_background_cache_hint_selector_material_light = 2131165295;
 			
-			// aapt resource value: 0x7f070067
-			public const int abc_btn_colored_borderless_text_material = 2131165287;
+			// aapt resource value: 0x7f070070
+			public const int abc_btn_colored_borderless_text_material = 2131165296;
 			
-			// aapt resource value: 0x7f070068
-			public const int abc_btn_colored_text_material = 2131165288;
+			// aapt resource value: 0x7f070071
+			public const int abc_btn_colored_text_material = 2131165297;
 			
-			// aapt resource value: 0x7f070069
-			public const int abc_color_highlight_material = 2131165289;
+			// aapt resource value: 0x7f070072
+			public const int abc_color_highlight_material = 2131165298;
 			
-			// aapt resource value: 0x7f07006a
-			public const int abc_hint_foreground_material_dark = 2131165290;
+			// aapt resource value: 0x7f070073
+			public const int abc_hint_foreground_material_dark = 2131165299;
 			
-			// aapt resource value: 0x7f07006b
-			public const int abc_hint_foreground_material_light = 2131165291;
+			// aapt resource value: 0x7f070074
+			public const int abc_hint_foreground_material_light = 2131165300;
 			
 			// aapt resource value: 0x7f070004
 			public const int abc_input_method_navigation_guard = 2131165188;
 			
-			// aapt resource value: 0x7f07006c
-			public const int abc_primary_text_disable_only_material_dark = 2131165292;
+			// aapt resource value: 0x7f070075
+			public const int abc_primary_text_disable_only_material_dark = 2131165301;
 			
-			// aapt resource value: 0x7f07006d
-			public const int abc_primary_text_disable_only_material_light = 2131165293;
+			// aapt resource value: 0x7f070076
+			public const int abc_primary_text_disable_only_material_light = 2131165302;
 			
-			// aapt resource value: 0x7f07006e
-			public const int abc_primary_text_material_dark = 2131165294;
+			// aapt resource value: 0x7f070077
+			public const int abc_primary_text_material_dark = 2131165303;
 			
-			// aapt resource value: 0x7f07006f
-			public const int abc_primary_text_material_light = 2131165295;
+			// aapt resource value: 0x7f070078
+			public const int abc_primary_text_material_light = 2131165304;
 			
-			// aapt resource value: 0x7f070070
-			public const int abc_search_url_text = 2131165296;
+			// aapt resource value: 0x7f070079
+			public const int abc_search_url_text = 2131165305;
 			
 			// aapt resource value: 0x7f070005
 			public const int abc_search_url_text_normal = 2131165189;
@@ -1183,29 +1183,32 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f070007
 			public const int abc_search_url_text_selected = 2131165191;
 			
-			// aapt resource value: 0x7f070071
-			public const int abc_secondary_text_material_dark = 2131165297;
+			// aapt resource value: 0x7f07007a
+			public const int abc_secondary_text_material_dark = 2131165306;
 			
-			// aapt resource value: 0x7f070072
-			public const int abc_secondary_text_material_light = 2131165298;
+			// aapt resource value: 0x7f07007b
+			public const int abc_secondary_text_material_light = 2131165307;
 			
-			// aapt resource value: 0x7f070073
-			public const int abc_tint_btn_checkable = 2131165299;
+			// aapt resource value: 0x7f07007c
+			public const int abc_tint_btn_checkable = 2131165308;
 			
-			// aapt resource value: 0x7f070074
-			public const int abc_tint_default = 2131165300;
+			// aapt resource value: 0x7f07007d
+			public const int abc_tint_default = 2131165309;
 			
-			// aapt resource value: 0x7f070075
-			public const int abc_tint_edittext = 2131165301;
+			// aapt resource value: 0x7f07007e
+			public const int abc_tint_edittext = 2131165310;
 			
-			// aapt resource value: 0x7f070076
-			public const int abc_tint_seek_thumb = 2131165302;
+			// aapt resource value: 0x7f07007f
+			public const int abc_tint_seek_thumb = 2131165311;
 			
-			// aapt resource value: 0x7f070077
-			public const int abc_tint_spinner = 2131165303;
+			// aapt resource value: 0x7f070080
+			public const int abc_tint_spinner = 2131165312;
 			
-			// aapt resource value: 0x7f070078
-			public const int abc_tint_switch_track = 2131165304;
+			// aapt resource value: 0x7f070081
+			public const int abc_tint_switch_track = 2131165313;
+			
+			// aapt resource value: 0x7f07006d
+			public const int accent = 2131165293;
 			
 			// aapt resource value: 0x7f070008
 			public const int accent_material_dark = 2131165192;
@@ -1261,6 +1264,15 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f070003
 			public const int cardview_shadow_start_color = 2131165187;
 			
+			// aapt resource value: 0x7f070068
+			public const int colorAccent = 2131165288;
+			
+			// aapt resource value: 0x7f070066
+			public const int colorPrimary = 2131165286;
+			
+			// aapt resource value: 0x7f070067
+			public const int colorPrimaryDark = 2131165287;
+			
 			// aapt resource value: 0x7f070016
 			public const int dim_foreground_disabled_material_dark = 2131165206;
 			
@@ -1272,6 +1284,12 @@ namespace MeusPedidos
 			
 			// aapt resource value: 0x7f070019
 			public const int dim_foreground_material_light = 2131165209;
+			
+			// aapt resource value: 0x7f070069
+			public const int entry_background = 2131165289;
+			
+			// aapt resource value: 0x7f07006a
+			public const int entry_border = 2131165290;
 			
 			// aapt resource value: 0x7f07001a
 			public const int error_color_material_dark = 2131165210;
@@ -1290,6 +1308,9 @@ namespace MeusPedidos
 			
 			// aapt resource value: 0x7f07001f
 			public const int highlighted_text_material_light = 2131165215;
+			
+			// aapt resource value: 0x7f070065
+			public const int launcher_background = 2131165285;
 			
 			// aapt resource value: 0x7f070062
 			public const int material_blue_500 = 2131165282;
@@ -1344,6 +1365,12 @@ namespace MeusPedidos
 			
 			// aapt resource value: 0x7f070040
 			public const int notification_material_background_media_default_color = 2131165248;
+			
+			// aapt resource value: 0x7f07006b
+			public const int primary = 2131165291;
+			
+			// aapt resource value: 0x7f07006c
+			public const int primaryDark = 2131165292;
 			
 			// aapt resource value: 0x7f07002c
 			public const int primary_dark_material_dark = 2131165228;
@@ -1486,11 +1513,11 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f07003b
 			public const int switch_thumb_disabled_material_light = 2131165243;
 			
-			// aapt resource value: 0x7f070079
-			public const int switch_thumb_material_dark = 2131165305;
+			// aapt resource value: 0x7f070082
+			public const int switch_thumb_material_dark = 2131165314;
 			
-			// aapt resource value: 0x7f07007a
-			public const int switch_thumb_material_light = 2131165306;
+			// aapt resource value: 0x7f070083
+			public const int switch_thumb_material_light = 2131165315;
 			
 			// aapt resource value: 0x7f07003c
 			public const int switch_thumb_normal_material_dark = 2131165244;
@@ -2181,11 +2208,11 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f02005d
 			public const int notification_icon_background = 2130837597;
 			
-			// aapt resource value: 0x7f020067
-			public const int notification_template_icon_bg = 2130837607;
-			
 			// aapt resource value: 0x7f020068
-			public const int notification_template_icon_low_bg = 2130837608;
+			public const int notification_template_icon_bg = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int notification_template_icon_low_bg = 2130837609;
 			
 			// aapt resource value: 0x7f02005e
 			public const int notification_tile_bg = 2130837598;
@@ -2203,16 +2230,19 @@ namespace MeusPedidos
 			public const int pin_progress_unpinned = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int scrubber_control_normal_holo = 2130837603;
+			public const int roxo = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int scrubber_control_pressed_holo = 2130837604;
+			public const int scrubber_control_normal_holo = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int tooltip_frame_dark = 2130837605;
+			public const int scrubber_control_pressed_holo = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int tooltip_frame_light = 2130837606;
+			public const int tooltip_frame_dark = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int tooltip_frame_light = 2130837607;
 			
 			static Drawable()
 			{
@@ -2908,10 +2938,13 @@ namespace MeusPedidos
 			public const int select_dialog_singlechoice_material = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int support_simple_spinner_dropdown_item = 2130968630;
+			public const int SplashScreen = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int toolbar = 2130968631;
+			public const int support_simple_spinner_dropdown_item = 2130968631;
+			
+			// aapt resource value: 0x7f040038
+			public const int toolbar = 2130968632;
 			
 			static Layout()
 			{
@@ -2949,16 +2982,22 @@ namespace MeusPedidos
 			public const int drawer_shadow_light = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ic_launcher = 2130903042;
+			public const int ic_drawer_dark = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ic_menu_refresh = 2130903043;
+			public const int ic_drawer_light = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Icon = 2130903044;
+			public const int ic_launcher = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int iconlauncher = 2130903045;
+			public const int ic_menu_refresh = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int Icon = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int iconlauncher = 2130903047;
 			
 			static Mipmap()
 			{
@@ -3714,6 +3753,12 @@ namespace MeusPedidos
 			
 			// aapt resource value: 0x7f060020
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131099680;
+			
+			// aapt resource value: 0x7f060169
+			public const int SplashTheme = 2131100009;
+			
+			// aapt resource value: 0x7f06016a
+			public const int SplashTheme_Base = 2131100010;
 			
 			// aapt resource value: 0x7f0600c7
 			public const int TextAppearance_AppCompat = 2131099847;

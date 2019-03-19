@@ -11,7 +11,7 @@ using MeusPedidos.Fragments;
 
 namespace MeusPedidos.Activities
 {
-    [Activity(Label = "Meus Pedidos", MainLauncher = true, Icon = "@mipmap/iconlauncher")]
+    [Activity(Label = "Meus Pedidos", MainLauncher = false, Icon = "@mipmap/iconlauncher")]
     public class MainActivity : BaseActivity
     {
         private MyActionBarDrawerToggle drawerToggle;
@@ -21,7 +21,7 @@ namespace MeusPedidos.Activities
         private ListView drawerListView;
 
         private static readonly string[] Sections = new[] {
-            "Browser", "Profile", "Sobre o App","Home", "Carrinho","Sobre o App"
+            "Home", "Profile", "Sobre o App","Browser", "Carrinho","Sobre o App"
         };
 
         protected override int LayoutResource
@@ -85,7 +85,7 @@ namespace MeusPedidos.Activities
             switch (position)
             {
                 case 0:
-                   fragment = new BrowseFragment();//browse
+                    fragment = new HomeFragment();//browse
                     break;
                 case 1:
                     fragment = new ProfileFragment();//friends
@@ -94,7 +94,7 @@ namespace MeusPedidos.Activities
                     fragment = new AboutAppFragment();//profile
                     break;
                 case 3:
-                    fragment = new HomeFragment();//home
+                    fragment = new BrowseFragment();//browse problema com a key duplicada depois retirar
                     break;
                 case 4:
                     //fragment = new CartFragment();//carrinho
