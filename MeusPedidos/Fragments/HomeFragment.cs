@@ -19,6 +19,7 @@ namespace MeusPedidos.Fragments
 {
     public class HomeFragment : Fragment
     {
+
         List<Products> tableItems = new List<Products>();
         public ICatalogDataService _catalogDataService;
         public IConnectionService _connection;
@@ -39,6 +40,9 @@ namespace MeusPedidos.Fragments
             this.HasOptionsMenu = true;
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var view = inflater.Inflate(Resource.Layout.home_fragment, null);
+
+
+
             list = view.FindViewById<ListView>(Resource.Id.List);
             //logica retorna dados no OnActivityCreated
             list.ItemClick += OnListItemClick;
@@ -135,7 +139,7 @@ namespace MeusPedidos.Fragments
         {
             var listView = sender as ListView;
             var t = tableItems[e.Position];
-            var intent = new Intent(Activity, typeof(HomeActivity));
+            var intent = new Intent(Activity, typeof(HomeActivityDetail));
             intent.PutExtra("id", t.Id);
             intent.PutExtra("name",t.Name);
             StartActivity(intent);

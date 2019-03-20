@@ -192,6 +192,9 @@
     <Reference Include="Plugin.Connectivity">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.2.0\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.1\lib\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -224,8 +227,9 @@
     <Compile Include="Services\Data\CatalogDataService.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Adapters\CatalogoScreenAdapter.cs" />
-    <Compile Include="Activities\HomeActivity.cs" />
+    <Compile Include="Activities\HomeActivityDetail.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="Adapters\AdapterReciclerDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -282,6 +286,8 @@
     <AndroidResource Include="Resources\mipmap-mdpi\ic_drawer_light.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_drawer_dark.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_drawer_light.png" />
+    <AndroidResource Include="Resources\layout\HomeDetail.axml" />
+    <AndroidResource Include="Resources\layout\PhotoCardView.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -329,4 +335,5 @@
   <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.Media.Compat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v4.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v4.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.CardView.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.CardView.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.targets')" />
 </Project>

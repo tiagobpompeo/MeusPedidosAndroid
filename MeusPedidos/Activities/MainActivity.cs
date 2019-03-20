@@ -36,6 +36,7 @@ namespace MeusPedidos.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+           
             Akavache.Registrations.Start("Pedidos");
             this.title = this.drawerTitle = this.Title;
             this.drawerLayout = this.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
