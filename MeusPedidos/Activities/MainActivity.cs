@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.Support.V7.App;
 using MeusPedidos.Helpers;
 using MeusPedidos.Fragments;
+using System;
 
 namespace MeusPedidos.Activities
 {
@@ -38,6 +39,7 @@ namespace MeusPedidos.Activities
             base.OnCreate(savedInstanceState);
            
             Akavache.Registrations.Start("Pedidos");
+           
             this.title = this.drawerTitle = this.Title;
             this.drawerLayout = this.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.drawerListView = this.FindViewById<ListView>(Resource.Id.left_drawer);
@@ -51,13 +53,9 @@ namespace MeusPedidos.Activities
             //Set Drawer Shadow
             this.drawerLayout.SetDrawerShadow(Resource.Mipmap.drawer_shadow_dark, (int)GravityFlags.Start);
 
-
-
+                       
             //DrawerToggle is the animation that happens with the indicator next to the actionbar
-            this.drawerToggle = new MyActionBarDrawerToggle(this, this.drawerLayout,
-                this.Toolbar,
-                Resource.String.drawer_open,
-                Resource.String.drawer_close);
+            this.drawerToggle = new MyActionBarDrawerToggle(this, this.drawerLayout,this.Toolbar,Resource.String.drawer_open,Resource.String.drawer_close);
 
             //Display the current fragments title and update the options menu
             this.drawerToggle.DrawerClosed += (o, args) => {
@@ -80,6 +78,7 @@ namespace MeusPedidos.Activities
             }
         }
 
+              
         private void ListItemClicked(int position)
         {
             Android.Support.V4.App.Fragment fragment = null;

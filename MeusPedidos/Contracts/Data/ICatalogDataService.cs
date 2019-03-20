@@ -10,6 +10,6 @@ namespace MeusPedidos.Contracts.Data
         Task<IEnumerable<Products>> GetAllCatalogAsync();
         Task<IEnumerable<PriceOff>> GetProductsOfTheWeekAsync();
         Task<IEnumerable<Categories>> GetAllCategories();
-
+      
     }
 }

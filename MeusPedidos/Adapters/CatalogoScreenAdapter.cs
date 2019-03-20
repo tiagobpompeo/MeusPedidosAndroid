@@ -47,6 +47,7 @@ namespace MeusPedidos
         {
             get { return items.Count; }
         }
+
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = items[position];

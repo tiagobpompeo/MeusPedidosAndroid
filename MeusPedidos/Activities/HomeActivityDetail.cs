@@ -13,7 +13,8 @@ using Pedidos.Services.Data;
 
 namespace MeusPedidos.Activities
 {
-    [Activity(Label = "Home Detail")]
+    [Activity(Label = "Detail", ParentActivity = typeof(MainActivity))]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = "navdrawer.activities.MainActivity")]
     public class HomeActivityDetail : BaseActivity
     {
         RecyclerView mRecyclerView;

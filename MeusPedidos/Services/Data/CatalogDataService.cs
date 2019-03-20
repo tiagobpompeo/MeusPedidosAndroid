@@ -91,6 +91,7 @@ namespace Pedidos.Services.Data
             Cache.InsertObject(CacheNameConstants.PriceOffOfTheWeek, categories, DateTimeOffset.Now.AddSeconds(1));
 
             return categories;
-        }
+        }       
+
     }
 }

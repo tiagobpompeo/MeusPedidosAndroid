@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Reactive.Linq;//importante essa Biblioteca cuidado ao atualizar o pacote akavache
 using System;
+using MeusPedidos.Models;
 
 namespace MeusPedidos.Services.BaseCacheService
 {
@@ -31,6 +32,12 @@ namespace MeusPedidos.Services.BaseCacheService
             {
                 return default(T);
             }
+        }
+
+        public IEnumerable<Categories> GetCategoriesMenu() 
+        {
+
+            return null;
         }
 
         public async Task InsertObject<T>(string key, T value, System.DateTimeOffset dateTimeOffset)

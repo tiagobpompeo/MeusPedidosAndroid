@@ -16,6 +16,8 @@
             android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        
+     
     </RelativeLayout>
 <!-- The navigation drawer -->
     <ListView
@@ -27,4 +29,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#EAEAEA" />
+       
+   
 </android.support.v4.widget.DrawerLayout>
