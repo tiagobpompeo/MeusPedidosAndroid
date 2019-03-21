@@ -19,7 +19,7 @@ using Fragment = Android.Support.V4.App.Fragment;
 
 namespace MeusPedidos.Fragments
 {
-    public class HomeFragment : Fragment
+    public class CartFragment : Fragment
     {
 
         List<Products> tableItems = new List<Products>();
@@ -29,7 +29,7 @@ namespace MeusPedidos.Fragments
         BaseService baseService;
         private ListView list;
 
-        public HomeFragment()
+        public CartFragment()
         {
             this.RetainInstance = true;
             _catalogDataService = new CatalogDataService();
@@ -42,7 +42,7 @@ namespace MeusPedidos.Fragments
         {
             this.HasOptionsMenu = true;
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-            var view = inflater.Inflate(Resource.Layout.home_fragment, null);
+            var view = inflater.Inflate(Resource.Layout.cart, null);
             list = view.FindViewById<ListView>(Resource.Id.List);
             //logica retorna dados no OnActivityCreated
             list.ItemClick += OnListItemClick;
@@ -53,10 +53,14 @@ namespace MeusPedidos.Fragments
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
+
+
             ProgressDialog progress = new ProgressDialog(Activity);
             progress.SetMessage("Wait while loading...");
             progress.SetCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.Show();
+
+
 
 
             var connection = await this._connection.CheckConnection();
@@ -87,6 +91,7 @@ namespace MeusPedidos.Fragments
             }
             else
             {
+
                 categories = await _catalogDataService.GetAllCategories();
                 var catalogCached = await baseService.GetFromCache<List<Products>>("CatalogData");
                 if (catalogCached != null)
@@ -107,6 +112,7 @@ namespace MeusPedidos.Fragments
                         }
                         list.Adapter = new CatalogoScreenAdapter(Activity, tableItems);
                     }
+
                 }
                 else
                 {
@@ -132,20 +138,12 @@ namespace MeusPedidos.Fragments
                     }
                 }
             }
+
             // To dismiss the dialog
             progress.Dismiss();
             progress.SetCancelable(true);
         }
 
-        protected void OnListItemClick(object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
-        {
-            var listView = sender as ListView;
-            var t = tableItems[e.Position];
-            var intent = new Intent(Activity, typeof(HomeActivityDetail));
-            intent.PutExtra("id", t.Id);
-            intent.PutExtra("name", t.Name);
-            StartActivity(intent);
-        }
 
 
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
@@ -193,6 +191,15 @@ namespace MeusPedidos.Fragments
             return true;
         }
 
-      
+        protected void OnListItemClick(object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
+        {
+            var listView = sender as ListView;
+            var t = tableItems[e.Position];
+            var intent = new Intent(Activity, typeof(HomeActivityDetail));
+            intent.PutExtra("id", t.Id);
+            intent.PutExtra("name", t.Name);
+            StartActivity(intent);
+        }
+
     }
 }

@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MeusPedidos.Activities;
 using MeusPedidos.Contracts;
 using MeusPedidos.Models;
 using MeusPedidos.Services.ConnectionService;
@@ -58,6 +59,29 @@ namespace MeusPedidos
             view.FindViewById<TextView>(Resource.Id.Text1).Text = item.Name;
             view.FindViewById<TextView>(Resource.Id.Text2).Text = item.Price.ToString();
 
+
+            //var btnInc =  view.FindViewById<Button>(Resource.Id.increase);
+            //var btnDec =  view.FindViewById<Button>(Resource.Id.decrease);
+            //var imgFav =  view.FindViewById<ImageView>(Resource.Id.favorite);
+
+            //btnInc.Click+=(sender, e) => { 
+            //    Console.WriteLine("Increment");            
+            //};
+
+            //btnDec.Click += (sender, e) => { 
+            //    Console.WriteLine("Decrement"); 
+            //};
+
+            //imgFav.Click += (sender, e) => { 
+            //    Console.WriteLine("Favorite");
+            //};
+
+            //view.Click += (sender, e) => 
+            //{
+               
+                              
+            //};
+
             Android.Net.ConnectivityManager conn = (Android.Net.ConnectivityManager)Application.Context.GetSystemService(Context.ConnectivityService);
             bool isConnected = conn.ActiveNetworkInfo != null && conn.ActiveNetworkInfo.IsConnected;
 
@@ -77,9 +101,15 @@ namespace MeusPedidos
                 //    view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(Resource.Mipmap.ic_launcher);
                 //}
             }
-
             return view;
         }
+
+
+        public void SendMessage(View view)
+        {
+            // Do something in response to button click
+        }
+
 
         private Bitmap GetImageBitmapFromUrl(string url)
         {

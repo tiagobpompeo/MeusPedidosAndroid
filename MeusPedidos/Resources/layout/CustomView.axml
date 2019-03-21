@@ -41,11 +41,37 @@
                 android:layout_width="wrap_content"  
                 android:layout_height="wrap_content"  
                 android:paddingLeft="5dp" />  
+            
+              <!--<Button
+                    android:id="@+id/decrease"
+                    android:layout_toRightOf="@id/Text2"
+                    android:layout_below="@id/Text2"    
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:onClick="decreaseInteger"
+                    android:text="-" />
+                    
+               <Button
+                    android:id="@+id/increase"
+                    android:layout_toRightOf="@id/decrease"
+                    android:layout_below="@id/Text2" 
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:onClick="increaseInteger"
+                    android:text="+" />
+                    
+              <ImageButton
+                    android:id="@+id/favorite"
+                    android:src="@drawable/sharp_star_border_black_18dp"   
+                    android:layout_toRightOf="@id/increase"
+                    android:layout_below="@id/Text2"    
+                    android:layout_width="50dp"
+                    android:onClick="favorite"
+                    android:layout_height="50dp"/>-->
+            
+            
+            
+            
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>
-
-
-
-
-

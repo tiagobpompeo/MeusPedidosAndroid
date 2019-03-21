@@ -3,24 +3,31 @@
     android:background="#E8E8E8"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+   
+    
+   <TextView  
+        android:id="@+id/TextTitle"  
+        android:text="Name"  
+        android:textAppearance="?android:attr/textAppearanceSmall"  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp" />  
     
     <ListView
-        android:id="@+id/List"
+        android:id="@+id/ListCategory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/button1"
         android:cacheColorHint="#FFDAFF7F"
         android:divider="@android:color/transparent" 
+        android:layout_below="@+id/TextTitle"
         android:layout_alignParentTop="true"/>
 
     <Button
         android:id="@android:id/button1"
-        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Comprar"/>
-    
- 
 
 </RelativeLayout>

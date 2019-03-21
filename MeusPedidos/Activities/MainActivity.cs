@@ -97,11 +97,9 @@ namespace MeusPedidos.Activities
                     fragment = new BrowseFragment();//browse problema com a key duplicada depois retirar
                     break;
                 case 4:
-                    //fragment = new CartFragment();//carrinho
+                    fragment = new CartFragment();//carrinho
                     break;
-                case 5:
-                    //fragment = new AboutApp();//sobre carrinho
-                    break;
+                
             }
 
             SupportFragmentManager.BeginTransaction()

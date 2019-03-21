@@ -230,6 +230,8 @@
     <Compile Include="Activities\HomeActivityDetail.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Adapters\AdapterReciclerDetail.cs" />
+    <Compile Include="Activities\CategoriesActivity.cs" />
+    <Compile Include="Fragments\CartFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -288,6 +290,10 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_drawer_light.png" />
     <AndroidResource Include="Resources\layout\HomeDetail.axml" />
     <AndroidResource Include="Resources\layout\PhotoCardView.axml" />
+    <AndroidResource Include="Resources\Menu\categorias_menu.xml" />
+    <AndroidResource Include="Resources\layout\CategoriesProducts.axml" />
+    <AndroidResource Include="Resources\layout\cart.axml" />
+    <AndroidResource Include="Resources\drawable\sharp_star_border_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

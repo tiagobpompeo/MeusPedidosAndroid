@@ -5,4 +5,9 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string name="menu_refresh">Refresh</string>
+    <string name="televisores">Televisores</string>
+    <string name="celulares">Celulares</string>
+    <string name="lavaroupas">Lava-Roupas</string>
+    <string name="notebooks">Notebooks</string>
+    <string name="cameras">Cameras</string>
 </resources>
