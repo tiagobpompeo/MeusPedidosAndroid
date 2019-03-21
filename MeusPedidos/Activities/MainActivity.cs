@@ -22,7 +22,7 @@ namespace MeusPedidos.Activities
         private ListView drawerListView;
 
         private static readonly string[] Sections = new[] {
-            "Home", "Profile", "Sobre o App","Browser", "Carrinho","Sobre o App"
+            "Home", "Profile", "Sobre o App","Browser", "Carrinho"
         };
 
         protected override int LayoutResource
