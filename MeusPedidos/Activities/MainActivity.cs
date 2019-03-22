@@ -86,6 +86,7 @@ namespace MeusPedidos.Activities
         private void ListItemClicked(int position)
         {
             Android.Support.V4.App.Fragment fragment = null;
+
             switch (position)
             {
                 case 0:

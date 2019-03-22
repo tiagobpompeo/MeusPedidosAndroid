@@ -13,13 +13,13 @@ namespace MeusPedidos.Repository
 {
     public class GenericRepository : IGenericRepository
     {
+
         public async Task<T> GetAsync<T>(string uri, string authToken = "")
         {
             try
             {
                 HttpClient httpClient = CreateHttpClient(uri);
                 string jsonResult = string.Empty;
-
                 var responseMessage = await Policy
                     .Handle<WebException>(ex =>
                     {
@@ -46,9 +46,7 @@ namespace MeusPedidos.Repository
                 {
                     throw new ServiceAuthenticationException(jsonResult);
                 }
-
                 throw new HttpRequestExceptionEx(responseMessage.StatusCode, jsonResult);
-
             }
             catch (Exception e)
             {
@@ -57,15 +55,15 @@ namespace MeusPedidos.Repository
             }
         }
 
+
+
         public async Task<T> PostAsync<T>(string uri, T data, string authToken = "")
         {
             try
             {
                 HttpClient httpClient = CreateHttpClient(uri);
-
                 var content = new StringContent(JsonConvert.SerializeObject(data));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
                 string jsonResult = string.Empty;
 
                 var responseMessage = await Policy
@@ -93,7 +91,6 @@ namespace MeusPedidos.Repository
                 {
                     throw new ServiceAuthenticationException(jsonResult);
                 }
-
                 throw new HttpRequestExceptionEx(responseMessage.StatusCode, jsonResult);
 
             }
@@ -104,15 +101,15 @@ namespace MeusPedidos.Repository
             }
         }
 
+
+
         public async Task<TR> PostAsync<T, TR>(string uri, T data, string authToken = "")
         {
             try
             {
                 HttpClient httpClient = CreateHttpClient(uri);
-
                 var content = new StringContent(JsonConvert.SerializeObject(data));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
                 string jsonResult = string.Empty;
 
                 var responseMessage = await Policy
@@ -151,15 +148,14 @@ namespace MeusPedidos.Repository
             }
         }
 
+
         public async Task<T> PutAsync<T>(string uri, T data, string authToken = "")
         {
             try
             {
                 HttpClient httpClient = CreateHttpClient(uri);
-
                 var content = new StringContent(JsonConvert.SerializeObject(data));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
                 string jsonResult = string.Empty;
 
                 var responseMessage = await Policy
@@ -198,11 +194,14 @@ namespace MeusPedidos.Repository
             }
         }
 
+
         public async Task DeleteAsync(string uri, string authToken = "")
         {
             HttpClient httpClient = CreateHttpClient(authToken);
             await httpClient.DeleteAsync(uri);
         }
+
+
 
         private HttpClient CreateHttpClient(string authToken)
         {

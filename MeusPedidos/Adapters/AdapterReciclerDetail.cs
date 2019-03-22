@@ -46,18 +46,14 @@ namespace MeusPedidos.Adapters
                     var imageBitmap = GetImageBitmapFromUrl(this.tableItems[position].Photo.ToString());
                     vh.Image.SetImageBitmap(imageBitmap);
                 }
-
             }
-
             vh.Caption.Text = this.tableItems[position].Name;
         }
 
-        public override RecyclerView.ViewHolder
-            OnCreateViewHolder(ViewGroup parent, int viewType)
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             // Inflate the CardView for the photo:
             View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.PhotoCardView, parent, false);
-
             // Create a ViewHolder to find and hold these view references, and 
             // register OnClick with the view holder:
             PhotoViewHolder vh = new PhotoViewHolder(itemView, OnClick);
@@ -68,8 +64,6 @@ namespace MeusPedidos.Adapters
         {
 
         }
-
-
 
         private Bitmap GetImageBitmapFromUrl(string url)
         {
@@ -83,11 +77,10 @@ namespace MeusPedidos.Adapters
                     imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
                 }
             }
-
             return imageBitmap;
         }
-    }
 
+    }
 
     public class PhotoViewHolder : RecyclerView.ViewHolder
     {
@@ -95,18 +88,16 @@ namespace MeusPedidos.Adapters
         public TextView Caption { get; private set; }
 
         // Get references to the views defined in the CardView layout.
-        public PhotoViewHolder(View itemView, Action<int> listener)
-            : base(itemView)
+        public PhotoViewHolder(View itemView, Action<int> listener): base(itemView)
         {
             // Locate and cache view references:
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageView);
             Caption = itemView.FindViewById<TextView>(Resource.Id.textView);
-
             // Detect user clicks on the item view and report which item
             // was clicked (by layout position) to the listener:
             itemView.Click += (sender, e) => listener(base.LayoutPosition);
         }
     }
 
-   
+       
 }

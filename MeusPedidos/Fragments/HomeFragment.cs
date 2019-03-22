@@ -87,7 +87,6 @@ namespace MeusPedidos.Fragments
             }
             else
             {
-
                 var catalogCached = await baseService.GetFromCache<List<Products>>("CatalogData");
                 if (catalogCached != null)
                 {

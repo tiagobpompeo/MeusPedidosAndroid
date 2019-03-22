@@ -19,7 +19,6 @@ namespace MeusPedidos.Activities
     {
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
-
         List<Products> tableItems = new List<Products>();
         public ICatalogDataService _catalogDataService;
         public IConnectionService _connection;
@@ -57,7 +56,6 @@ namespace MeusPedidos.Activities
             if (!connection.IsSuccess)
             {
 
-
             }
             else 
             {
@@ -86,7 +84,6 @@ namespace MeusPedidos.Activities
                     mAdapter = new AdapterReciclerDetail(this, tableItems);
                     mRecyclerView.SetAdapter(mAdapter);
                 }
-
             }
         }
 
@@ -94,6 +91,5 @@ namespace MeusPedidos.Activities
         {
             return base.OnOptionsItemSelected(item);
         }
-
     }
 }

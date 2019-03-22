@@ -33,7 +33,6 @@ namespace MeusPedidos.Activities
         public IConnectionService _connection;
         #endregion
 
-
         protected override int LayoutResource
         {
             get
@@ -62,35 +61,9 @@ namespace MeusPedidos.Activities
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-
-                    Android.Support.V4.App.NavUtils.NavigateUpFromSameTask(this);
-
-                    //Wrong:
-                    //var intent = new Intent(this, typeof(HomeView));
-                    //intent.AddFlags(ActivityFlags.ClearTop);
-                    //StartActivity(intent);
-
-
-                    //if this could be launched externally:
-
-                    /*var upIntent = NavUtils.GetParentActivityIntent(this);
-                    if (NavUtils.ShouldUpRecreateTask(this, upIntent))
-                    {
-                        // This activity is NOT part of this app's task, so create a new task
-                        // when navigating up, with a synthesized back stack.
-                        Android.Support.V4.App.TaskStackBuilder.Create(this).
-                            AddNextIntentWithParentStack(upIntent).StartActivities();
-                    }
-                    else
-                    {
-                        // This activity is part of this app's task, so simply
-                        // navigate up to the logical parent activity.
-                        NavUtils.NavigateUpTo(this, upIntent); 
-                    }*/
-
+                    Android.Support.V4.App.NavUtils.NavigateUpFromSameTask(this);                
                     break;
             }
-
             return base.OnOptionsItemSelected(item);
         }
 

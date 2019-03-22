@@ -58,7 +58,7 @@ namespace MeusPedidos
                 view = context.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
             view.FindViewById<TextView>(Resource.Id.Text1).Text = item.Name;
             view.FindViewById<TextView>(Resource.Id.Text2).Text = item.Price.ToString();
-            view.FindViewById<TextView>(Resource.Id.Text3).Text = item.Id.ToString();
+            view.FindViewById<TextView>(Resource.Id.Text3).Text = "-20";
 
             var btnInc =  view.FindViewById<Button>(Resource.Id.increase);
             var btnDec =  view.FindViewById<Button>(Resource.Id.decrease);

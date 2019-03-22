@@ -25,7 +25,6 @@ namespace Pedidos.Droid
             var intent = new Intent(Application.Context, typeof(MainActivity));
             StartActivity(intent);
             Finish();
-
         }
     }
 }

@@ -17,6 +17,7 @@ namespace MeusPedidos.Activities
             get;
             set;
         }
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -42,7 +43,6 @@ namespace MeusPedidos.Activities
             set { Toolbar.SetNavigationIcon(value); }
         }
     }
-
 
 }
 

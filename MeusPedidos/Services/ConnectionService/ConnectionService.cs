@@ -12,7 +12,6 @@ namespace MeusPedidos.Services.ConnectionService
     public class ConnectionService : IConnectionService
     {
       
-
         public async Task<Response> CheckConnection()
         {
 

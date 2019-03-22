@@ -32,10 +32,7 @@ namespace MeusPedidos.Adapters
             if (position < 0)
                 return null;
 
-            var view = (convertView
-                            ?? m_Context.LayoutInflater.Inflate(
-                                    Resource.Layout.item_monkey, parent, false)
-                        );
+            var view = (convertView ?? m_Context.LayoutInflater.Inflate(Resource.Layout.item_monkey, parent, false));
 
             if (view == null)
                 return null;
@@ -52,7 +49,6 @@ namespace MeusPedidos.Adapters
             }
 
             var friend = this.m_Friends.ElementAt(position);
-
             wrapper.Title.Text = friend.Title;
             ImageLoader.DisplayImage(friend.Image, wrapper.Art, -1);
             return view;
