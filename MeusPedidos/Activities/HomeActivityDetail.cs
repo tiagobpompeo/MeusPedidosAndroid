@@ -14,7 +14,7 @@ using Pedidos.Services.Data;
 namespace MeusPedidos.Activities
 {
     [Activity(Label = "Detail", ParentActivity = typeof(MainActivity))]
-    [MetaData("android.support.PARENT_ACTIVITY", Value = "navdrawer.activities.MainActivity")]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = "meuspedidos.activities.MainActivity")]
     public class HomeActivityDetail : BaseActivity
     {
         RecyclerView mRecyclerView;
@@ -46,8 +46,8 @@ namespace MeusPedidos.Activities
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-
             LoadDetailProduct(idProduct, nameProduct);
+            SupportActionBar.Title = nameProduct;
         }
 
         private async void LoadDetailProduct(int idProduct,string nameProduct)

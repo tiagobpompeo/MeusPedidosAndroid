@@ -2509,8 +2509,8 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f070015
 			public const int disableHome = 2131165205;
 			
-			// aapt resource value: 0x7f07008c
-			public const int drawer_layout = 2131165324;
+			// aapt resource value: 0x7f07008d
+			public const int drawer_layout = 2131165325;
 			
 			// aapt resource value: 0x7f07006b
 			public const int edit_query = 2131165291;
@@ -2578,11 +2578,11 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f070043
 			public const int italic = 2131165251;
 			
-			// aapt resource value: 0x7f07008a
-			public const int item_image = 2131165322;
-			
 			// aapt resource value: 0x7f07008b
-			public const int item_title = 2131165323;
+			public const int item_image = 2131165323;
+			
+			// aapt resource value: 0x7f07008c
+			public const int item_title = 2131165324;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
@@ -2665,8 +2665,8 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f070063
 			public const int radio = 2131165283;
 			
-			// aapt resource value: 0x7f070089
-			public const int recyclerView = 2131165321;
+			// aapt resource value: 0x7f07008a
+			public const int recyclerView = 2131165322;
 			
 			// aapt resource value: 0x7f07003d
 			public const int right = 2131165245;
@@ -2803,8 +2803,8 @@ namespace MeusPedidos
 			// aapt resource value: 0x7f07005a
 			public const int title_template = 2131165274;
 			
-			// aapt resource value: 0x7f07008d
-			public const int toolbar = 2131165325;
+			// aapt resource value: 0x7f070089
+			public const int toolbar = 2131165321;
 			
 			// aapt resource value: 0x7f070033
 			public const int top = 2131165235;

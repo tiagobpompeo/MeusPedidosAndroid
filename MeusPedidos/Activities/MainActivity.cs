@@ -27,6 +27,7 @@ namespace MeusPedidos.Activities
             "Home", "Profile", "Sobre o App","Browser", "Carrinho"
         };
 
+
         protected override int LayoutResource
         {
             get
@@ -34,6 +35,7 @@ namespace MeusPedidos.Activities
                 return Resource.Layout.Main;
             }
         }
+
 
 
         protected override void OnCreate(Bundle savedInstanceState)

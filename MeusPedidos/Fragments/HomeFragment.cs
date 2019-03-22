@@ -156,6 +156,7 @@ namespace MeusPedidos.Fragments
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+           
             switch (item.ItemId)
             {
                 case Resource.Id.televisores:

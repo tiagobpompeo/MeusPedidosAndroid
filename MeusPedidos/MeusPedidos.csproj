@@ -232,6 +232,7 @@
     <Compile Include="Adapters\AdapterReciclerDetail.cs" />
     <Compile Include="Activities\CategoriesActivity.cs" />
     <Compile Include="Fragments\CartFragment.cs" />
+    <Compile Include="Fragments\CategoriesFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
