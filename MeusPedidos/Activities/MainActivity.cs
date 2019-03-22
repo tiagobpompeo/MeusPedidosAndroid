@@ -15,11 +15,13 @@ namespace MeusPedidos.Activities
     [Activity(Label = "Meus Pedidos", MainLauncher = false, Icon = "@mipmap/iconlauncher")]
     public class MainActivity : BaseActivity
     {
+        #region Attributes and Properties
         private MyActionBarDrawerToggle drawerToggle;
         private string drawerTitle;
         private string title;
         private DrawerLayout drawerLayout;
         private ListView drawerListView;
+        #endregion
 
         private static readonly string[] Sections = new[] {
             "Home", "Profile", "Sobre o App","Browser", "Carrinho"

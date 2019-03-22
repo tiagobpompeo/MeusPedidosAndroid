@@ -26,6 +26,7 @@ namespace MeusPedidos.Activities
             {
                 SetSupportActionBar(Toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu_white_24dp);
                 SupportActionBar.SetHomeButtonEnabled(true);
 
             }

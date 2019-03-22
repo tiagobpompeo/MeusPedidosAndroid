@@ -41,7 +41,7 @@ namespace Pedidos.Services.Data
                 var urlDefault = "https://pastebin.com/raw/eVqp7pfX";
                 var products = await _genericRepository.GetAsync<List<Products>>(urlDefault);
 
-                Cache.InsertObject(CacheNameConstants.AllProducts, products, DateTimeOffset.Now.AddSeconds(1));
+                //Cache.InsertObject(CacheNameConstants.AllProducts, products, DateTimeOffset.Now.AddSeconds(1));
 
                 return products;
             }
@@ -65,7 +65,7 @@ namespace Pedidos.Services.Data
             var urlDefault = "https://pastebin.com/raw/R9cJFBtG";
             var prices = await _genericRepository.GetAsync<List<PriceOff>>(urlDefault);
 
-            Cache.InsertObject(CacheNameConstants.PriceOffOfTheWeek, prices, DateTimeOffset.Now.AddSeconds(1));
+            //Cache.InsertObject(CacheNameConstants.PriceOffOfTheWeek, prices, DateTimeOffset.Now.AddSeconds(1));
 
             return prices;
         }
@@ -88,7 +88,7 @@ namespace Pedidos.Services.Data
             var urlDefault = "https://pastebin.com/raw/YNR2rsWe";
             var categories = await _genericRepository.GetAsync<List<Categories>>(urlDefault);
 
-            Cache.InsertObject(CacheNameConstants.PriceOffOfTheWeek, categories, DateTimeOffset.Now.AddSeconds(1));
+            //Cache.InsertObject(CacheNameConstants.PriceOffOfTheWeek, categories, DateTimeOffset.Now.AddSeconds(1));
 
             return categories;
         }       

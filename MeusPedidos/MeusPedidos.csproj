@@ -294,6 +294,10 @@
     <AndroidResource Include="Resources\layout\CategoriesProducts.axml" />
     <AndroidResource Include="Resources\layout\cart.axml" />
     <AndroidResource Include="Resources\drawable\sharp_star_border_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable\ic_access_time_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable\ic_info_outline_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable\ic_menu_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable\ic_timer_white_24dp.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

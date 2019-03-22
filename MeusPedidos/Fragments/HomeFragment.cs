@@ -21,13 +21,14 @@ namespace MeusPedidos.Fragments
 {
     public class HomeFragment : Fragment
     {
-
+        #region Attributes and Properties
         List<Products> tableItems = new List<Products>();
         IEnumerable<Categories> categories = new List<Categories>();
         public ICatalogDataService _catalogDataService;
         public IConnectionService _connection;
         BaseService baseService;
         private ListView list;
+        #endregion
 
         public HomeFragment()
         {
@@ -58,7 +59,6 @@ namespace MeusPedidos.Fragments
             progress.SetCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.Show();
 
-
             var connection = await this._connection.CheckConnection();
 
             if (!connection.IsSuccess)
@@ -87,7 +87,7 @@ namespace MeusPedidos.Fragments
             }
             else
             {
-                categories = await _catalogDataService.GetAllCategories();
+
                 var catalogCached = await baseService.GetFromCache<List<Products>>("CatalogData");
                 if (catalogCached != null)
                 {
@@ -111,7 +111,7 @@ namespace MeusPedidos.Fragments
                 else
                 {
                     var products = await _catalogDataService.GetAllCatalogAsync();
-                    categories = await _catalogDataService.GetAllCategories();
+               
                     await baseService.InsertObject("CatalogData", products, DateTimeOffset.Now.AddMinutes(10));
 
                     if (products != null)
@@ -168,7 +168,7 @@ namespace MeusPedidos.Fragments
                 case Resource.Id.celulares:
                     var celularesIntent = new Intent(Application.Context, typeof(CategoriesActivity));
                     celularesIntent.PutExtra("id", 2);
-                    celularesIntent.PutExtra("title", "Televisores");
+                    celularesIntent.PutExtra("title", "Celulares");
                     StartActivity(celularesIntent);
                     return true;
                 case Resource.Id.lavaroupas:
@@ -180,19 +180,19 @@ namespace MeusPedidos.Fragments
                 case Resource.Id.notebooks:
                     var notebooksIntent = new Intent(Application.Context, typeof(CategoriesActivity));
                     notebooksIntent.PutExtra("id", 4);
-                    notebooksIntent.PutExtra("title", "Televisores");
+                    notebooksIntent.PutExtra("title", "Notebooks");
                     StartActivity(notebooksIntent);
                     return true;
                 case Resource.Id.cameras:
                     var camerasIntent = new Intent(Application.Context, typeof(CategoriesActivity));
                     camerasIntent.PutExtra("id", 5);
-                    camerasIntent.PutExtra("title", "Televisores");
+                    camerasIntent.PutExtra("title", "Cameras");
                     StartActivity(camerasIntent);
                     return true;
             }
             return true;
-        }
+        }     
 
-      
+
     }
 }
