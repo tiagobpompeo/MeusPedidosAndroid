@@ -3,14 +3,19 @@
     android:background="#E8E8E8"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-   <TextView  
+    
+    <include layout="@layout/toolbar" />
+    
+     <TextView  
         android:id="@+id/TextTitle"  
         android:text="Name"  
         android:textAppearance="?android:attr/textAppearanceSmall"  
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="5dp" />  
+  
     <ListView
+        android:paddingTop="60dp"
         android:id="@+id/ListCategory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

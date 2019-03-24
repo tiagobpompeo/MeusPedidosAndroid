@@ -15,8 +15,7 @@ using MeusPedidos.Activities;
 
 namespace Pedidos.Droid
 {
-    [Activity(Label = "Meus Pedidos", Icon = "@mipmap/iconlauncher", Theme = "@style/SplashTheme",
-              MainLauncher = true)]
+    [Activity(Label = "Meus Pedidos", Icon = "@mipmap/iconlauncher", Theme = "@style/SplashTheme",MainLauncher = true)]
     public class SplashActivity:AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

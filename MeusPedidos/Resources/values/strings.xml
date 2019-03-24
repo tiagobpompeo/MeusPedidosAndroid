@@ -10,4 +10,12 @@
     <string name="lavaroupas">Lava-Roupas</string>
     <string name="notebooks">Notebooks</string>
     <string name="cameras">Cameras</string>
+    <string name="categorias">Categoria</string>
+    <string name="televisores">Televisores</string>
+    <string name="lavaroupas">Lava-Roupas</string>
+    <string name="notebooks">Notebooks</string>
+    <string name="cameras">Cameras</string>
+     <string name="home">Home</string>
+     <string name="carrinho">Carrinho</string>
+     <string name="aboutapp">Sobre o Aplicativo</string>
 </resources>

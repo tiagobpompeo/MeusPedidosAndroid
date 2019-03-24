@@ -57,8 +57,8 @@ namespace MeusPedidos
             if (view == null) // no view to re-use, create new
                 view = context.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
             view.FindViewById<TextView>(Resource.Id.Text1).Text = item.Name;
-            view.FindViewById<TextView>(Resource.Id.Text2).Text = item.Price.ToString();
-            view.FindViewById<TextView>(Resource.Id.Text3).Text = "-20";
+            view.FindViewById<TextView>(Resource.Id.Text2).Text = "-20%";
+            view.FindViewById<TextView>(Resource.Id.Text3).Text = item.Price.ToString();
 
             var btnInc =  view.FindViewById<Button>(Resource.Id.increase);
             var btnDec =  view.FindViewById<Button>(Resource.Id.decrease);
@@ -81,6 +81,8 @@ namespace MeusPedidos
                
                               
             };
+
+           
 
             Android.Net.ConnectivityManager conn = (Android.Net.ConnectivityManager)Application.Context.GetSystemService(Context.ConnectivityService);
             bool isConnected = conn.ActiveNetworkInfo != null && conn.ActiveNetworkInfo.IsConnected;

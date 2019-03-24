@@ -41,6 +41,7 @@ namespace MeusPedidos.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Android.OS.Bundle savedInstanceState)
         {
             this.HasOptionsMenu = true;
+            ((MainActivity)Activity).SupportActionBar.SetTitle(Resource.String.carrinho);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var view = inflater.Inflate(Resource.Layout.cart, null);
             list = view.FindViewById<ListView>(Resource.Id.List);

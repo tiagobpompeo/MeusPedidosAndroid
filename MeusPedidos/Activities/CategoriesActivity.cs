@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using MeusPedidos.Contracts;
@@ -20,7 +21,7 @@ using Pedidos.Services.Data;
 namespace MeusPedidos.Activities
 {
 
-    [Activity(Label = "Categories", ParentActivity = typeof(MainActivity))]
+    [Activity(Label="Categories",ParentActivity = typeof(MainActivity))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = "meuspedidos.activities.MainActivity")]
     public class CategoriesActivity : BaseActivity
     {
@@ -51,6 +52,11 @@ namespace MeusPedidos.Activities
             baseService = new BaseService();
             var idCategoria = base.Intent.Extras.GetInt("id", -1);
             var nameCategoria = base.Intent.Extras.GetString("title");
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarPrincipal);
+            base.SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            this.Title = nameCategoria;
+            SupportActionBar.Title = Title;
             GetProductListCategory(idCategoria, nameCategoria);
             GetProductListCategoryByRecicle(idCategoria, nameCategoria);
         }
@@ -61,11 +67,48 @@ namespace MeusPedidos.Activities
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    Android.Support.V4.App.NavUtils.NavigateUpFromSameTask(this);                
+
+                    NavUtils.NavigateUpFromSameTask(this);
+
+                    //Wrong:
+                    //var intent = new Intent(this, typeof(HomeView));
+                    //intent.AddFlags(ActivityFlags.ClearTop);
+                    //StartActivity(intent);
+
+
+                    //if this could be launched externally:
+
+                    //var upIntent = NavUtils.GetParentActivityIntent(this);
+                    //if (NavUtils.ShouldUpRecreateTask(this, upIntent))
+                    //{
+                    //    // This activity is NOT part of this app's task, so create a new task
+                    //    // when navigating up, with a synthesized back stack.
+                    //    Android.Support.V4.App.TaskStackBuilder.Create(this).
+                    //        AddNextIntentWithParentStack(upIntent).StartActivities();
+                    //}
+                    //else
+                    //{
+                    //    // This activity is part of this app's task, so simply
+                    //    // navigate up to the logical parent activity.
+                    //    NavUtils.NavigateUpTo(this, upIntent);
+                    //}
+
                     break;
             }
+
             return base.OnOptionsItemSelected(item);
         }
+
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    switch (item.ItemId)
+        //    {
+        //        case Android.Resource.Id.Home:
+        //            Android.Support.V4.App.NavUtils.NavigateUpFromSameTask(this);                
+        //            break;
+        //    }
+        //    return base.OnOptionsItemSelected(item);
+        //}
 
 
         private void GetProductListCategoryByRecicle(int idCategoria, string nameCategoria) { }

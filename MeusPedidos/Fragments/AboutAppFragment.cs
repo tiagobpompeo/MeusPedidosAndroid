@@ -21,6 +21,7 @@ namespace MeusPedidos.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Android.OS.Bundle savedInstanceState)
         {
+            ((MainActivity)Activity).SupportActionBar.SetTitle(Resource.String.aboutapp);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var view = inflater.Inflate(Resource.Layout.about_app, null);
             webview =  view.FindViewById<WebView>(Resource.Id.webview);

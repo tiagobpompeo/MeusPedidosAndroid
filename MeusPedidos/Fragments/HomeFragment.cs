@@ -28,6 +28,7 @@ namespace MeusPedidos.Fragments
         public IConnectionService _connection;
         BaseService baseService;
         private ListView list;
+
         #endregion
 
         public HomeFragment()
@@ -36,12 +37,14 @@ namespace MeusPedidos.Fragments
             _catalogDataService = new CatalogDataService();
             _connection = new ConnectionService();
             baseService = new BaseService();
+           
         }
 
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Android.OS.Bundle savedInstanceState)
         {
             this.HasOptionsMenu = true;
+            ((MainActivity)Activity).SupportActionBar.SetTitle(Resource.String.home);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var view = inflater.Inflate(Resource.Layout.home_fragment, null);
             list = view.FindViewById<ListView>(Resource.Id.List);
@@ -149,13 +152,13 @@ namespace MeusPedidos.Fragments
 
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {
+            base.OnCreateOptionsMenu(menu, inflater);
             inflater.Inflate(Resource.Menu.categorias_menu, menu);
         }
 
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-           
             switch (item.ItemId)
             {
                 case Resource.Id.televisores:
@@ -174,7 +177,7 @@ namespace MeusPedidos.Fragments
                 case Resource.Id.lavaroupas:
                     var lavaroupasIntent = new Intent(Application.Context, typeof(CategoriesActivity));
                     lavaroupasIntent.PutExtra("id", 3);
-                    lavaroupasIntent.PutExtra("title", "Televisores");
+                    lavaroupasIntent.PutExtra("title", "Lava-Roupas");
                     StartActivity(lavaroupasIntent);
                     return true;
                 case Resource.Id.notebooks:
