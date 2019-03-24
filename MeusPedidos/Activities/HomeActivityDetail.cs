@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Android.Widget;
 using MeusPedidos.Adapters;
 using MeusPedidos.Contracts;
 using MeusPedidos.Contracts.Data;
@@ -24,7 +25,7 @@ namespace MeusPedidos.Activities
         public IConnectionService _connection;
         BaseService baseService;
         AdapterReciclerDetail mAdapter;
-
+        Button btnCart;
         protected override int LayoutResource
         {
             get
@@ -41,13 +42,23 @@ namespace MeusPedidos.Activities
             baseService = new BaseService();
             var idProduct = base.Intent.Extras.GetInt("id", -1);
             var nameProduct = base.Intent.Extras.GetString("name");
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarPrincipal);
+            base.SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            this.Title = nameProduct;
+            SupportActionBar.Title = Title;
             //reciclerView na HomeDetail Layout
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             LoadDetailProduct(idProduct, nameProduct);
-            SupportActionBar.Title = nameProduct;
+
+           
+
+            //SupportActionBar.Title = nameProduct;
         }
+
+
 
         private async void LoadDetailProduct(int idProduct,string nameProduct)
         {

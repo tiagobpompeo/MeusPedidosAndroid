@@ -245,6 +245,8 @@
     <Compile Include="Activities\CategoriesActivity.cs" />
     <Compile Include="Fragments\CartFragment.cs" />
     <Compile Include="Fragments\CategoriesFragment.cs" />
+    <Compile Include="Fragments\HomeFragmentRecicler.cs" />
+    <Compile Include="Adapters\AdapterReciclerHome.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -321,6 +323,8 @@
     <AndroidResource Include="Resources\drawable\backButtonBox.xml" />
     <AndroidResource Include="Resources\drawable\outline_star_rate_black_18dp.png" />
     <AndroidResource Include="Resources\drawable\outline_stars_black_18dp.png" />
+    <AndroidResource Include="Resources\layout\home_fragmentRecicle.axml" />
+    <AndroidResource Include="Resources\layout\CustomViewHome.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

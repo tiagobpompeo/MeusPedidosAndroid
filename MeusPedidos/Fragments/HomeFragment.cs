@@ -51,14 +51,14 @@ namespace MeusPedidos.Fragments
             //logica retorna dados no OnActivityCreated
             list.ItemClick += OnListItemClick;
             return view;
-        }
+        } 
 
 
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
             ProgressDialog progress = new ProgressDialog(Activity);
-            progress.SetMessage("Wait while loading...");
+            progress.SetMessage("Aguarde carregando...");
             progress.SetCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.Show();
 

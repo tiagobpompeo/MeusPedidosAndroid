@@ -30,8 +30,9 @@ namespace MeusPedidos.Activities
             drawerLayout.AddDrawerListener(drawerToggle);
             drawerToggle.SyncState();
             var menu = FindViewById<Android.Support.Design.Widget.NavigationView>(Resource.Id.navigationView);
-            menu.NavigationItemSelected += OnMenuItemSelected;        
+            menu.NavigationItemSelected += OnMenuItemSelected;
             Navigate(new HomeFragment());
+            //Navigate(new HomeFragmentRecicler());
         }
 
         //nao habilitar pois categoria fragmento perde o clique

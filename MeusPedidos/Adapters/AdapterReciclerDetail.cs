@@ -21,6 +21,7 @@ namespace MeusPedidos.Adapters
         {
             this.homeActivityDetail = homeActivityDetail;
             this.tableItems = tableItems;
+          
         }
 
         // Return the number of photos available in the photo album:
@@ -34,7 +35,7 @@ namespace MeusPedidos.Adapters
             PhotoViewHolder vh = holder as PhotoViewHolder;
             Android.Net.ConnectivityManager conn = (Android.Net.ConnectivityManager)Application.Context.GetSystemService(Context.ConnectivityService);
             bool isConnected = conn.ActiveNetworkInfo != null && conn.ActiveNetworkInfo.IsConnected;
-          
+
             if (!isConnected)
             {
                 vh.Image.SetImageResource(Resource.Mipmap.ic_launcher);
@@ -48,6 +49,9 @@ namespace MeusPedidos.Adapters
                 }
             }
             vh.Caption.Text = this.tableItems[position].Name;
+            vh.Description.Text = this.tableItems[position].Description;
+            vh.Price.Text = "R$ "+this.tableItems[position].Price.ToString();
+
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -86,18 +90,22 @@ namespace MeusPedidos.Adapters
     {
         public ImageView Image { get; private set; }
         public TextView Caption { get; private set; }
+        public TextView Price { get; private set; }
+        public TextView Description { get; private set; }
 
         // Get references to the views defined in the CardView layout.
-        public PhotoViewHolder(View itemView, Action<int> listener): base(itemView)
+        public PhotoViewHolder(View itemView, Action<int> listener) : base(itemView)
         {
             // Locate and cache view references:
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageView);
-            Caption = itemView.FindViewById<TextView>(Resource.Id.textView);
+            Caption = itemView.FindViewById<TextView>(Resource.Id.textView1);
+            Price = itemView.FindViewById<TextView>(Resource.Id.textView2);
+            Description = itemView.FindViewById<TextView>(Resource.Id.textView3);
             // Detect user clicks on the item view and report which item
             // was clicked (by layout position) to the listener:
             itemView.Click += (sender, e) => listener(base.LayoutPosition);
         }
     }
 
-       
+
 }

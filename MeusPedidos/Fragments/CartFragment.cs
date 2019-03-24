@@ -68,7 +68,7 @@ namespace MeusPedidos.Fragments
 
             if (!connection.IsSuccess)
             {
-                var catalogCached = await baseService.GetFromCache<List<Products>>("CatalogData");
+                var catalogCached = await baseService.GetFromCache<List<Products>>("CartData");
 
                 if (catalogCached != null)
                 {
@@ -93,8 +93,8 @@ namespace MeusPedidos.Fragments
             else
             {
 
-                categories = await _catalogDataService.GetAllCategories();
-                var catalogCached = await baseService.GetFromCache<List<Products>>("CatalogData");
+               
+                var catalogCached = await baseService.GetFromCache<List<Products>>("CartData");
                 if (catalogCached != null)
                 {
                     if (catalogCached != null)
@@ -117,9 +117,9 @@ namespace MeusPedidos.Fragments
                 }
                 else
                 {
-                    var products = await _catalogDataService.GetAllCatalogAsync();
-                    categories = await _catalogDataService.GetAllCategories();
-                    await baseService.InsertObject("CatalogData", products, DateTimeOffset.Now.AddMinutes(10));
+                    var products = await _catalogDataService.GetAllCatalogAsync();//susbtituir por sqlite ou logica akavache
+                   
+                    await baseService.InsertObject("CartData", products, DateTimeOffset.Now.AddMinutes(10));
 
                     if (products != null)
                     {
