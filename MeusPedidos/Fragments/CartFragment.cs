@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Akavache;
 using Android.App;
 using Android.Content;
@@ -11,6 +12,7 @@ using MeusPedidos.Adapters;
 using MeusPedidos.Contracts;
 using MeusPedidos.Contracts.Data;
 using MeusPedidos.Models;
+using MeusPedidos.Models.Sqlite;
 using MeusPedidos.Services.BaseCacheService;
 using MeusPedidos.Services.ConnectionService;
 using Pedidos.Services.Data;
@@ -21,13 +23,15 @@ namespace MeusPedidos.Fragments
 {
     public class CartFragment : Fragment
     {
-
-        List<Products> tableItems = new List<Products>();
+        #region Properties and Attributes
+        List<ListShop> tableItems = new List<ListShop>();
         IEnumerable<Categories> categories = new List<Categories>();
         public ICatalogDataService _catalogDataService;
         public IConnectionService _connection;
         BaseService baseService;
         private ListView list;
+        ObservableCollection<ListShop> listShop;
+        #endregion
 
         public CartFragment()
         {
@@ -54,97 +58,37 @@ namespace MeusPedidos.Fragments
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
-
-
             ProgressDialog progress = new ProgressDialog(Activity);
             progress.SetMessage("Wait while loading...");
             progress.SetCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.Show();
 
+            listShop = new ObservableCollection<ListShop>(await MainActivity.ShopRepository.GetAllProductAsync());
+            await baseService.InsertObject("CartData", listShop, DateTimeOffset.Now.AddMinutes(10));
 
-
-
-            var connection = await this._connection.CheckConnection();
-
-            if (!connection.IsSuccess)
+            if (listShop.Count > 0)
             {
-                var catalogCached = await baseService.GetFromCache<List<Products>>("CartData");
-
-                if (catalogCached != null)
+                foreach (var be in listShop)
                 {
-                    if (catalogCached != null)
+                    tableItems.Add(new ListShop
                     {
-                        foreach (var be in catalogCached)
-                        {
-                            tableItems.Add(new Products
-                            {
-                                Id = be.Id,
-                                Price = be.Price,
-                                Name = be.Name,
-                                Description = be.Description,
-                                Category_id = be.Category_id,
-                                Photo = be.Photo
-                            });
-                        }
-                        list.Adapter = new CatalogoScreenAdapter(Activity, tableItems);
-                    }
+                        Price = be.Price,
+                        Name = be.Name,
+                        Image = be.Image,
+                        IdProduct = be.IdProduct
+                    });
                 }
+                list.Adapter = new CatalogoScreenAdapterCart(Activity, tableItems);
             }
             else
             {
-
-               
-                var catalogCached = await baseService.GetFromCache<List<Products>>("CartData");
-                if (catalogCached != null)
-                {
-                    if (catalogCached != null)
-                    {
-                        foreach (var be in catalogCached)
-                        {
-                            tableItems.Add(new Products
-                            {
-                                Id = be.Id,
-                                Price = be.Price,
-                                Name = be.Name,
-                                Description = be.Description,
-                                Category_id = be.Category_id,
-                                Photo = be.Photo
-                            });
-                        }
-                        list.Adapter = new CatalogoScreenAdapter(Activity, tableItems);
-                    }
-
-                }
-                else
-                {
-                    var products = await _catalogDataService.GetAllCatalogAsync();//susbtituir por sqlite ou logica akavache
-                   
-                    await baseService.InsertObject("CartData", products, DateTimeOffset.Now.AddMinutes(10));
-
-                    if (products != null)
-                    {
-                        foreach (var be in products)
-                        {
-                            tableItems.Add(new Products
-                            {
-                                Id = be.Id,
-                                Price = be.Price,
-                                Name = be.Name,
-                                Description = be.Description,
-                                Category_id = be.Category_id,
-                                Photo = be.Photo
-                            });
-                        }
-                        list.Adapter = new CatalogoScreenAdapter(Activity, tableItems);
-                    }
-                }
+                Toast.MakeText(Activity, "Nenhum Produto no carrinho", ToastLength.Long).Show();
             }
 
             // To dismiss the dialog
             progress.Dismiss();
             progress.SetCancelable(true);
         }
-
 
 
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
@@ -194,12 +138,7 @@ namespace MeusPedidos.Fragments
 
         protected void OnListItemClick(object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
         {
-            var listView = sender as ListView;
-            var t = tableItems[e.Position];
-            var intent = new Intent(Activity, typeof(HomeActivityDetail));
-            intent.PutExtra("id", t.Id);
-            intent.PutExtra("name", t.Name);
-            StartActivity(intent);
+
         }
 
     }

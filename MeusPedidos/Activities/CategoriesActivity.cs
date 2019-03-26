@@ -46,7 +46,6 @@ namespace MeusPedidos.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //SetContentView(Resource.Layout.CategoriesProducts);
             _catalogDataService = new CatalogDataService();
             _connection = new ConnectionService();
             baseService = new BaseService();
@@ -69,47 +68,10 @@ namespace MeusPedidos.Activities
                 case Android.Resource.Id.Home:
 
                     NavUtils.NavigateUpFromSameTask(this);
-
-                    //Wrong:
-                    //var intent = new Intent(this, typeof(HomeView));
-                    //intent.AddFlags(ActivityFlags.ClearTop);
-                    //StartActivity(intent);
-
-
-                    //if this could be launched externally:
-
-                    //var upIntent = NavUtils.GetParentActivityIntent(this);
-                    //if (NavUtils.ShouldUpRecreateTask(this, upIntent))
-                    //{
-                    //    // This activity is NOT part of this app's task, so create a new task
-                    //    // when navigating up, with a synthesized back stack.
-                    //    Android.Support.V4.App.TaskStackBuilder.Create(this).
-                    //        AddNextIntentWithParentStack(upIntent).StartActivities();
-                    //}
-                    //else
-                    //{
-                    //    // This activity is part of this app's task, so simply
-                    //    // navigate up to the logical parent activity.
-                    //    NavUtils.NavigateUpTo(this, upIntent);
-                    //}
-
                     break;
             }
-
             return base.OnOptionsItemSelected(item);
         }
-
-        //public override bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    switch (item.ItemId)
-        //    {
-        //        case Android.Resource.Id.Home:
-        //            Android.Support.V4.App.NavUtils.NavigateUpFromSameTask(this);                
-        //            break;
-        //    }
-        //    return base.OnOptionsItemSelected(item);
-        //}
-
 
         private void GetProductListCategoryByRecicle(int idCategoria, string nameCategoria) { }
 
@@ -211,7 +173,6 @@ namespace MeusPedidos.Activities
         {
             var listView = sender as ListView;
             var t = tableItems[e.Position];
-            Android.Widget.Toast.MakeText(this, t.Name, Android.Widget.ToastLength.Short).Show();
             Console.WriteLine("Clicked on " + t.Name);
         }
         #endregion

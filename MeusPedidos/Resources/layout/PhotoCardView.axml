@@ -1,60 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:background="@android:color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                android:scaleType="centerCrop" />
-            <TextView
-                android:textSize="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#333333"
-                android:text="Caption"
-                android:id="@+id/textView1"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#333333"
-                android:text="Caption"
-                android:id="@+id/textView2"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#333333"
-                android:text="Caption"
-                android:textSize="12dp"
-                android:id="@+id/textView3"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp" />
-         <Button
-                
-                android:layout_marginTop="20dp"
-                android:id="@id/button1"
-                android:background="#ffd633"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="addCart"
-                android:text="Adicionar ao Carrinho"/>
-        
-        </LinearLayout>
- 
-    
-    
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" 
+            android:id="@+id/imageView"
+            android:scaleType="centerInside" 
+        />
+        <TextView
+            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#333333"
+            android:text="Caption"
+            android:id="@+id/textView1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="4dp" 
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#333333"
+            android:text="Caption"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="4dp"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#333333"
+            android:text="Caption"
+            android:textSize="12dp"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="4dp" 
+        />
+        <Button
+            
+            android:layout_marginTop="20dp"
+            android:id="@id/button1"
+            android:background="#ffd633"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="addCart"
+            android:text="Adicionar ao Carrinho"
+        />
+</LinearLayout>
+
+
+

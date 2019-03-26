@@ -16,8 +16,9 @@ namespace MeusPedidos.Adapters
 {
     public class AdapterReciclerHome :  RecyclerView.Adapter
     {
-              
+        #region Properties and Attributes  
         private List<Products> tableItems;
+        #endregion
 
         public AdapterReciclerHome(List<Products> tableItems)
         {
@@ -26,15 +27,27 @@ namespace MeusPedidos.Adapters
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            // Inflate the CardView for the photo:
             View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.CustomViewHome, parent, false);
-            // Create a ViewHolder to find and hold these view references, and 
-            // register OnClick with the view holder:
             PhotoViewHolderHome vh = new PhotoViewHolderHome(itemView, OnClick);
+
+            var decrease = itemView.FindViewById<Button>(Resource.Id.decreaseHome);
+            var increase = itemView.FindViewById<Button>(Resource.Id.increaseHome);
+            var favorite = itemView.FindViewById<ImageButton>(Resource.Id.favoriteHome);
+
+            decrease.Click += (sender, e) =>
+            {
+            };
+            increase.Click += (sender, e) =>
+            {
+            };
+            decrease.Click += (sender, e) =>
+            {
+            };
+
             return vh;
         }
 
-        // Return the number of photos available in the photo album:
+
         public override int ItemCount
         {
             get { return this.tableItems.Count; }
@@ -67,11 +80,7 @@ namespace MeusPedidos.Adapters
         }
 
        
-
-        private void OnClick(int obj)
-        {
-
-        }
+        private void OnClick(int obj){}
 
         private Bitmap GetImageBitmapFromUrl(string url)
         {
@@ -102,10 +111,9 @@ namespace MeusPedidos.Adapters
         public ImageButton Favorite { get; private set; }
         public TextView DescriptionHome { get; private set; }
 
-        // Get references to the views defined in the CardView layout.
+
         public PhotoViewHolderHome(View itemView, Action<int> listener) : base(itemView)
         {
-            // Locate and cache view references:
             ImageHome= itemView.FindViewById<ImageView>(Resource.Id.ImageHome);
             TextHome1 = itemView.FindViewById<TextView>(Resource.Id.TextHome1);
             TextHome2 = itemView.FindViewById<TextView>(Resource.Id.TextHome2);
@@ -114,8 +122,7 @@ namespace MeusPedidos.Adapters
             IncreaseHome = itemView.FindViewById<Button>(Resource.Id.increaseHome);
             TextHome4 = itemView.FindViewById<TextView>(Resource.Id.TextHome4);
             Favorite = itemView.FindViewById<ImageButton>(Resource.Id.favoriteHome);
-            DescriptionHome = itemView.FindViewById<TextView>(Resource.Id.textView3);
-           
+            DescriptionHome = itemView.FindViewById<TextView>(Resource.Id.textView3);           
             itemView.Click += (sender, e) => listener(base.LayoutPosition);
         }
     }

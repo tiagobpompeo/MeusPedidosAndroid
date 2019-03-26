@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar"/>
     
      <TextView  
         android:id="@+id/TextTitle"  
@@ -12,7 +12,8 @@
         android:textAppearance="?android:attr/textAppearanceSmall"  
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="5dp" />  
+        android:paddingLeft="5dp" 
+      />  
   
     <ListView
         android:paddingTop="60dp"
@@ -23,12 +24,14 @@
         android:cacheColorHint="#FFDAFF7F"
         android:divider="@android:color/transparent" 
         android:layout_below="@+id/TextTitle"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true"
+    />
     <Button
         android:id="@android:id/button1"
         android:background="#ffd633"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Comprar"/>
+        android:text="Comprar"
+    />
 </RelativeLayout>

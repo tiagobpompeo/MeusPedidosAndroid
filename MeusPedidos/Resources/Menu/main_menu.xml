@@ -18,12 +18,12 @@
   <item android:title="Menus Internos">
     <menu>
       <item
-        android:title="Menu 1"
-        android:icon="@drawable/menu_refresh"      
+        android:title="Catálogo Recicler Layout"
+        android:icon="@drawable/menu_refresh"  
         android:id="@+id/nav_menu1"/>
       <item
-        android:title="Menu 2"
-        android:icon="@drawable/menu_refresh"      
+       android:title="Catálogo Add Cart Cell"
+        android:icon="@drawable/menu_refresh"     
         android:id="@+id/nav_menu2"/>
       <item
         android:title="Menu 3"

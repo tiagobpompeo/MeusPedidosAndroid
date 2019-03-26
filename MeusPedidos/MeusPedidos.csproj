@@ -169,7 +169,7 @@
       <HintPath>..\packages\SQLitePCLRaw.bundle_e_sqlite3.1.1.13\lib\MonoAndroid\SQLitePCLRaw.batteries_e_sqlite3.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCLRaw.batteries_v2">
-      <HintPath>..\packages\SQLitePCLRaw.bundle_e_sqlite3.1.1.13\lib\MonoAndroid\SQLitePCLRaw.batteries_v2.dll</HintPath>
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\MonoAndroid\SQLitePCLRaw.batteries_v2.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive">
       <HintPath>..\packages\System.Reactive.4.0.0\lib\netstandard2.0\System.Reactive.dll</HintPath>
@@ -207,6 +207,12 @@
     <Reference Include="Xamarin.Android.Support.Constraint.Layout">
       <HintPath>..\packages\Xamarin.Android.Support.Constraint.Layout.1.1.2\lib\MonoAndroid70\Xamarin.Android.Support.Constraint.Layout.dll</HintPath>
     </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\MonoAndroid\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.5.231\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -214,13 +220,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
     <Compile Include="Helpers\ActionBarDrawerEventArgs.cs" />
-    <Compile Include="Fragments\BrowseFragment.cs" />
-    <Compile Include="Models\FriendViewModel.cs" />
-    <Compile Include="Adapters\Util.cs" />
-    <Compile Include="Adapters\MonkeyAdapter.cs" />
-    <Compile Include="Activities\FriendActivity.cs" />
     <Compile Include="Helpers\SquareImageView.cs" />
-    <Compile Include="Fragments\ProfileFragment.cs" />
     <Compile Include="Fragments\AboutAppFragment.cs" />
     <Compile Include="Fragments\HomeFragment.cs" />
     <Compile Include="Constants\ApiConstants.cs" />
@@ -247,6 +247,14 @@
     <Compile Include="Fragments\CategoriesFragment.cs" />
     <Compile Include="Fragments\HomeFragmentRecicler.cs" />
     <Compile Include="Adapters\AdapterReciclerHome.cs" />
+    <Compile Include="Fragments\HomeFragmentCellPopUp.cs" />
+    <Compile Include="Adapters\CatalogScreenAdapterPopUp.cs" />
+    <Compile Include="Sqlite\FileAccessHelper.cs" />
+    <Compile Include="Sqlite\ShopRepository.cs" />
+    <Compile Include="Models\Sqlite\ListShop.cs" />
+    <Compile Include="Activities\CartActivity.cs" />
+    <Compile Include="Adapters\CartAdapterScreen.cs" />
+    <Compile Include="Adapters\CatalogoScreenAdapterCart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -284,8 +292,6 @@
     <AndroidResource Include="Resources\layout\fragment_home.axml" />
     <AndroidResource Include="Resources\Menu\refresh.xml" />
     <AndroidResource Include="Resources\drawable\menu_refresh.png" />
-    <AndroidResource Include="Resources\layout\item_monkey.axml" />
-    <AndroidResource Include="Resources\layout\fragment_profile.axml" />
     <AndroidResource Include="Resources\layout\about_app.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\iconlauncher.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\iconlauncher.png" />
@@ -325,6 +331,8 @@
     <AndroidResource Include="Resources\drawable\outline_stars_black_18dp.png" />
     <AndroidResource Include="Resources\layout\home_fragmentRecicle.axml" />
     <AndroidResource Include="Resources\layout\CustomViewHome.axml" />
+    <AndroidResource Include="Resources\layout\home_fragmentPopUp.axml" />
+    <AndroidResource Include="Resources\layout\MyCart.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -334,6 +342,8 @@
     <Folder Include="Models\" />
     <Folder Include="Adapters\" />
     <Folder Include="Resources\Menu\" />
+    <Folder Include="Sqlite\" />
+    <Folder Include="Models\Sqlite\" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Helpers\Linker.xml" />

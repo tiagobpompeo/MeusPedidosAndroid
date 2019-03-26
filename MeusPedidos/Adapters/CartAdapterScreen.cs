@@ -1,61 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.ObjectModel;
 using System.Net;
-using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MeusPedidos.Activities;
-using MeusPedidos.Contracts;
-using MeusPedidos.Models;
-using MeusPedidos.Services.ConnectionService;
+using MeusPedidos.Models.Sqlite;
 
-namespace MeusPedidos
+namespace MeusPedidos.Adapters
 {
-    public class CatalogoScreenAdapter : BaseAdapter<Products>
+    public class CartAdapterScreen : BaseAdapter<ListShop>
     {
-        #region Properties and Attributes
-        List<Products> items;
-        Activity context;
-        public IConnectionService _connection;
+        #region Properties and Attributes  
+        private CartActivity cartActivity;
+        private ObservableCollection<ListShop> listShop;
         #endregion
 
-        #region Constructor
-        public CatalogoScreenAdapter(Activity context, List<Products> items)
-            : base()
+        #region Constructor     
+        public CartAdapterScreen(CartActivity cartActivity, ObservableCollection<ListShop> listShop)
         {
-            this.context = context;
-            this.items = items;
-            _connection = new ConnectionService();
+            this.cartActivity = cartActivity;
+            this.listShop = listShop;
         }
         #endregion
+
 
         #region Methods
         public override long GetItemId(int position)
         {
             return position;
         }
-        public override Products this[int position]
+        public override ListShop this[int position]
         {
-            get { return items[position]; }
+            get { return this.listShop[position]; }
         }
         public override int Count
         {
-            get { return items.Count; }
+            get { return this.listShop.Count; }
         }
+
+        #endregion
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var item = items[position];
+            var item = this.listShop[position];
 
             View view = convertView;
             if (view == null) // no view to re-use, create new
-                view = context.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
+                view = this.cartActivity.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
             view.FindViewById<TextView>(Resource.Id.Text1).Text = item.Name;
             view.FindViewById<TextView>(Resource.Id.Text2).Text = "-20%";
             view.FindViewById<TextView>(Resource.Id.Text3).Text = "R$ " + item.Price.ToString();
@@ -69,22 +63,14 @@ namespace MeusPedidos
             }
             else
             {
-                if (item.Photo != null)
+                if (item.Image != null)
                 {
-                    var imageBitmap = GetImageBitmapFromUrl(item.Photo.ToString());
+                    var imageBitmap = GetImageBitmapFromUrl(item.Image.ToString());
                     view.FindViewById<ImageView>(Resource.Id.Image).SetImageBitmap(imageBitmap);
                 }
-
             }
             return view;
         }
-
-
-        public void SendMessage(View view)
-        {
-            // Do something in response to button click
-        }
-
 
         private Bitmap GetImageBitmapFromUrl(string url)
         {
@@ -101,6 +87,6 @@ namespace MeusPedidos
 
             return imageBitmap;
         }
-        #endregion
+
     }
 }

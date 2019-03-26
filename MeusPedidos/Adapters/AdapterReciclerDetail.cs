@@ -9,22 +9,24 @@ using Android.Views;
 using Android.Widget;
 using MeusPedidos.Activities;
 using MeusPedidos.Models;
+using MeusPedidos.Models.Sqlite;
 
 namespace MeusPedidos.Adapters
 {
     public class AdapterReciclerDetail : RecyclerView.Adapter
     {
+        #region Properties and Attributes
         private readonly HomeActivityDetail homeActivityDetail;
         private readonly List<Products> tableItems;
+     
+        #endregion
 
         public AdapterReciclerDetail(HomeActivityDetail homeActivityDetail, List<Products> tableItems)
         {
             this.homeActivityDetail = homeActivityDetail;
             this.tableItems = tableItems;
-          
         }
 
-        // Return the number of photos available in the photo album:
         public override int ItemCount
         {
             get { return this.tableItems.Count; }
@@ -50,24 +52,59 @@ namespace MeusPedidos.Adapters
             }
             vh.Caption.Text = this.tableItems[position].Name;
             vh.Description.Text = this.tableItems[position].Description;
-            vh.Price.Text = "R$ "+this.tableItems[position].Price.ToString();
-
+            vh.Price.Text = "R$ " + this.tableItems[position].Price.ToString();
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            // Inflate the CardView for the photo:
             View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.PhotoCardView, parent, false);
-            // Create a ViewHolder to find and hold these view references, and 
-            // register OnClick with the view holder:
+            var btnInc = itemView.FindViewById<Button>(Resource.Id.button1);
+
+            btnInc.Click += (sender, e) =>
+            {
+                //add to cart
+                AlertDialog.Builder alertDiag = new AlertDialog.Builder(this.homeActivityDetail);
+                alertDiag.SetTitle("Adiçāo ao Carrinho");
+                alertDiag.SetMessage("Add Item para o Carrinho?");
+                alertDiag.SetPositiveButton("Sim", (senderAlert, args) =>
+                {
+                    var data = tableItems[0];
+                    SaveItemToCart(data);
+                });
+                alertDiag.SetNegativeButton("Cancelar", (senderAlert, args) =>
+                {
+                    alertDiag.Dispose();
+                });
+                Dialog diag = alertDiag.Create();
+                diag.Show();
+            };
+
             PhotoViewHolder vh = new PhotoViewHolder(itemView, OnClick);
             return vh;
         }
 
-        private void OnClick(int obj)
+        private async void SaveItemToCart(Products data)
         {
-
+            if (data != null)
+            {
+                int idInt = data.Id;
+                var quantidade = 1;
+                var dados = new ListShop
+                {
+                    //ID
+                    IdProduct = idInt.ToString(),
+                    Name = data.Name,
+                    Quantity = quantidade.ToString(),
+                    Image = data.Photo,
+                    Price = data.Price.ToString()
+                };
+                await MainActivity.ShopRepository.AddNewProductAsync(dados);
+                Toast.MakeText(Application.Context, "Produto adicionado", ToastLength.Short).Show();
+            }
         }
+
+
+        private void OnClick(int obj){}
 
         private Bitmap GetImageBitmapFromUrl(string url)
         {
@@ -93,16 +130,12 @@ namespace MeusPedidos.Adapters
         public TextView Price { get; private set; }
         public TextView Description { get; private set; }
 
-        // Get references to the views defined in the CardView layout.
         public PhotoViewHolder(View itemView, Action<int> listener) : base(itemView)
         {
-            // Locate and cache view references:
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageView);
             Caption = itemView.FindViewById<TextView>(Resource.Id.textView1);
             Price = itemView.FindViewById<TextView>(Resource.Id.textView2);
             Description = itemView.FindViewById<TextView>(Resource.Id.textView3);
-            // Detect user clicks on the item view and report which item
-            // was clicked (by layout position) to the listener:
             itemView.Click += (sender, e) => listener(base.LayoutPosition);
         }
     }

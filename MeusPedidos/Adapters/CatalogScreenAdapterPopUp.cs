@@ -17,16 +17,16 @@ using MeusPedidos.Services.ConnectionService;
 
 namespace MeusPedidos
 {
-    public class CatalogoScreenAdapter : BaseAdapter<Products>
+    public class CatalogoScreenAdapterPopUp : BaseAdapter<Products>
     {
-        #region Properties and Attributes
+        #region Properties
         List<Products> items;
         Activity context;
         public IConnectionService _connection;
         #endregion
 
         #region Constructor
-        public CatalogoScreenAdapter(Activity context, List<Products> items)
+        public CatalogoScreenAdapterPopUp(Activity context, List<Products> items)
             : base()
         {
             this.context = context;
@@ -59,7 +59,6 @@ namespace MeusPedidos
             view.FindViewById<TextView>(Resource.Id.Text1).Text = item.Name;
             view.FindViewById<TextView>(Resource.Id.Text2).Text = "-20%";
             view.FindViewById<TextView>(Resource.Id.Text3).Text = "R$ " + item.Price.ToString();
-
             Android.Net.ConnectivityManager conn = (Android.Net.ConnectivityManager)Application.Context.GetSystemService(Context.ConnectivityService);
             bool isConnected = conn.ActiveNetworkInfo != null && conn.ActiveNetworkInfo.IsConnected;
 
@@ -74,7 +73,6 @@ namespace MeusPedidos
                     var imageBitmap = GetImageBitmapFromUrl(item.Photo.ToString());
                     view.FindViewById<ImageView>(Resource.Id.Image).SetImageBitmap(imageBitmap);
                 }
-
             }
             return view;
         }

@@ -50,7 +50,7 @@ namespace MeusPedidos.Fragments
             var view = inflater.Inflate(Resource.Layout.CategoriesProducts, null);
             textView = view.FindViewById<TextView>(Resource.Id.TextTitle);
             listView = view.FindViewById<ListView>(Resource.Id.ListCategory);
-            textView.Text = this.v2;          
+            textView.Text = this.v2;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
 

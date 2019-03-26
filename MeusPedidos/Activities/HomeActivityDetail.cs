@@ -18,6 +18,7 @@ namespace MeusPedidos.Activities
     [MetaData("android.support.PARENT_ACTIVITY", Value = "meuspedidos.activities.MainActivity")]
     public class HomeActivityDetail : BaseActivity
     {
+        #region Properties and Attributes
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
         List<Products> tableItems = new List<Products>();
@@ -33,6 +34,7 @@ namespace MeusPedidos.Activities
                 return Resource.Layout.HomeDetail;
             }
         }
+        #endregion
 
         protected override void OnCreate(Android.OS.Bundle savedInstanceState)
         {
@@ -51,13 +53,10 @@ namespace MeusPedidos.Activities
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            LoadDetailProduct(idProduct, nameProduct);
+            LoadDetailProduct(idProduct, nameProduct);        
 
-           
-
-            //SupportActionBar.Title = nameProduct;
+          
         }
-
 
 
         private async void LoadDetailProduct(int idProduct,string nameProduct)

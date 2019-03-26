@@ -26,6 +26,7 @@ namespace MeusPedidos.Fragments
 {
     public class HomeFragmentRecicler : Fragment
     {
+        #region Properties and Attributes  
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
         List<Products> tableItems = new List<Products>();
@@ -33,7 +34,7 @@ namespace MeusPedidos.Fragments
         public IConnectionService _connection;
         BaseService baseService;
         AdapterReciclerHome mAdapter;
-
+        #endregion
 
         public HomeFragmentRecicler()
         {

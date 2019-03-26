@@ -28,7 +28,6 @@ namespace MeusPedidos.Fragments
         public IConnectionService _connection;
         BaseService baseService;
         private ListView list;
-
         #endregion
 
         public HomeFragment()
@@ -162,7 +161,6 @@ namespace MeusPedidos.Fragments
             switch (item.ItemId)
             {
                 case Resource.Id.televisores:
-
                     var televisoresIntent = new Intent(Application.Context, typeof(CategoriesActivity));
                     televisoresIntent.PutExtra("id", 1);
                     televisoresIntent.PutExtra("title", "Televisores");

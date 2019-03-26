@@ -4,8 +4,6 @@
         <color android:color="@color/primaryDark" />
     </item>
     <item>
-        <bitmap android:src="@drawable/roxo"  
-                android:tileMode="disabled" 
-                android:gravity="fill" />
+        <bitmap android:src="@drawable/roxo" android:tileMode="disabled" android:gravity="fill" />
     </item>
 </layer-list>
