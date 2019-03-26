@@ -7,7 +7,7 @@ Fragments : utilizados como componentes independentes e modulares que ajudam a l
 Generic Repository : acesso de dados "real", oculta detalhes do acesso a dados do consumidor, retorna instâncias de modelo. Acessando serviços utilizando HttpClient.
 Linker : O Linker como que detecta códigos não utilizados e os removem dos artefatos gerados, isso permite diminuir o tamanho do seu app consideravelmente.
 
-Packages Utilizados:
+##Packages Utilizados:
 
 Package Polly : utilizado esta  biblioteca de resiliência para manipulação de falhas.
 Sqlite : mecanismo de armazenamento local.
